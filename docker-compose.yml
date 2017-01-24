@@ -1,0 +1,10 @@
+version: '2'
+services:
+    dev:
+        image: node:5
+        entrypoint: /bin/bash install.sh
+        working_dir: /app
+        ports:
+            - "80:80"
+        volumes:
+            - .:/app

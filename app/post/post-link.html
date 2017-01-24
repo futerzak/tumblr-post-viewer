@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <a href="" ui-sref="list({userName: userName})"><button class="btn" type="button" name="button">Wróć</button></a>
+      <h1>POST ID - {{post['id']}}</h1>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-body" >
+            <p>{{post.date}}</p>
+            <p><a href="{{post['link-url']}}"><span ng-bind-html="renderHtml(post['link-text'])"></span></a></p>
+            <p><span ng-bind-html="renderHtml(post['link-description'])"></span></p>
+
+            <p><a href="{{post.url}}">Oryginalny link</a></p>
+            <p>
+              <span ng-bind-html="renderHtml(post['like-button'])"></span>
+              <span ng-bind-html="renderHtml(post['reblog-button'])"></span>
+            </p>
+            <p>Tagi:
+              <ul>
+                <li ng-repeat="tag in post.tags">#{{tag}}</li>
+              </ul>
+            </p>
+            <div class="col-md-4" ng-repeat="photo in post.photos" >
+              <a href="{{photo['photo-url-1280']}}"><img ng-src="{{photo['photo-url-250']}}" class="img-thumbnail" /></a>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+      <a href="" ui-sref="list({userName: userName})"><button class="btn" type="button" name="button">Wróć</button></a>
+    </div>
+  </div>
+</div>

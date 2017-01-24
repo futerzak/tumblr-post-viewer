@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h2>Filtry:</h2>
+          <p>Strona: <input type="number" placeholder="page" ng-model="params.page"></p>
+          <p>Liczba postów na stronie: <input placeholder="number on page" type="number" min="10" max="50" ng-model="params.numberOnPage"></p>
+          <p>Typ: <select class="" name="type" id="type" ng-model="params.type" placeholder="typ">
+            <option ng-repeat="type in types" value="{{type.type}}">{{type.label}}</option>
+          </select></p>
+          <p>Tag: <input ng-model="params.tags"></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <button clas="btn" type="button" name="button" ng-click="prev()">&lt;&lt;</button>
+    </div>
+    <div class="col-md-1 col-md-offset-10 text-right">
+      <button clas="btn pull-right" type="button" name="button" ng-click="next()">&gt;&gt;</button>
+    </div>
+    <div class="col-sm-12">
+      <div class="panel panel-default" ng-repeat="post in tumblrData.posts">
+        <div class="panel-body">
+          <div>
+            <a href="" ui-sref="{{post.type}}({postId: post.id, userName: userName})">{{post['date'] + " >> " + post['slug']}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <button clas="btn" type="button" name="button" ng-click="prev()">&lt;&lt;</button>
+    </div>
+    <div class="col-md-1 col-md-offset-10 text-right">
+      <button clas="btn pull-right" type="button" name="button" ng-click="next()">&gt;&gt;</button>
+    </div>
+  </div>
+</div>

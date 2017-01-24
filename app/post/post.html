@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <a href="" ui-sref="list({userName: userName})"><button class="btn" type="button" name="button">Wróć</button></a>
+      <h1>{{post['id']}}</h1>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-body" >
+            <p>url: {{post.url}}</p>
+            <p>type: {{post.type}}</p>
+            <p>date-gmt: {{post['date-gmt']}}</p>
+            <p>date: {{post.date}}</p>
+            <p>title: <span ng-bind-html="renderHtml(post['regular-title'])"></span></p>
+            <p>contents:
+              <p ng-bind-html="renderHtml(post['regular-body'])">
+              </p>
+            </p>
+            <p ng-bind-html="renderHtml(post['photo-caption'])"></p>
+            <p><img ng-src="{{post['photo-url-500']}}" class="responsive" /></p>
+            <div class="" >
+              <p>Tags:</p>
+              <ul>
+                <li ng-repeat="tag in post.tags">{{tag}}</li>
+              </ul>
+            </div>
+            <hr>
+            <div class="" ng-repeat="(key,param) in post" ng-if="param !== ''" ng-autobind>
+              <h3>{{key}}</h3>
+              <p ng-bind-html="renderHtml({{param}})">{{param}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="" ui-sref="list({userName: userName})"><button class="btn" type="button" name="button">Wróć</button></a>
+    </div>
+  </div>
+</div>
